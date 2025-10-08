@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased bg-neutral-100 dark:bg-neutral-700`}
+        className={`${inter.className} bg-neutral-100 antialiased dark:bg-neutral-700`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
