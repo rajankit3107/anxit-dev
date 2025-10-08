@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-screen p-4 md:p-10">
+      <Container classname="min-h-[200vh] p-4 md:pt-20 md:pb-10">
         <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
           Hello, there!
         </h1>
