@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 export const Heading = ({
   as: Tag = "h1",
   children,
@@ -8,7 +10,12 @@ export const Heading = ({
   classname?: string;
 }) => {
   return (
-    <Tag className="text-primary text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl">
+    <Tag
+      className={cn(
+        "text-primary text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl",
+        classname,
+      )}
+    >
       {children}
     </Tag>
   );

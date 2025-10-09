@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 export const SubHeading = ({
   as: Tag = "h2",
   children,
@@ -8,6 +10,8 @@ export const SubHeading = ({
   classname?: string;
 }) => {
   return (
-    <Tag className="text-secondary test-sm pt-4 md:text-base">{children}</Tag>
+    <Tag className={cn("text-secondary pt-4 text-sm md:text-base", classname)}>
+      {children}
+    </Tag>
   );
 };

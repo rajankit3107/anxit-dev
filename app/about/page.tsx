@@ -111,7 +111,7 @@ export default function AboutPage() {
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ x: 4 }}
                     className="relative"
@@ -120,7 +120,7 @@ export default function AboutPage() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false }}
                       transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
                       className="absolute top-1 -left-4 h-2 w-2 rounded-full border border-neutral-400 bg-neutral-500 dark:border-neutral-500 dark:bg-neutral-400"
                     />

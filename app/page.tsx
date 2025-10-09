@@ -1,6 +1,7 @@
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Projects } from "@/components/projects";
+import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
 import Image from "next/image";
 
@@ -14,6 +15,7 @@ export default function Home() {
           efficient solutions.
         </SubHeading>
         <Projects />
+        <RecentBlogs />
       </Container>
     </div>
   );
