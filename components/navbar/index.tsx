@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Container } from "../container";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { motion, useMotionValueEvent, useScroll } from "motion/react"; // ✅ fix import
 
 export const Navbar = () => {
@@ -32,13 +32,15 @@ export const Navbar = () => {
       transition={{ duration: 0.4, ease: "linear" }}
       className={`fixed top-4 left-1/2 z-50 flex max-w-4xl -translate-x-1/2 items-center justify-between rounded-xl border border-white/20 bg-white/30 px-4 py-2 backdrop-blur-md dark:border-neutral-800/50 dark:bg-neutral-900/30`}
     >
-      <Image
-        className="h-10 w-10 rounded-full"
-        src="/avatar.jpg"
-        alt="avatar"
-        width={100}
-        height={100}
-      />
+      <Link href={"/"}>
+        <Image
+          className="h-10 w-10 rounded-full"
+          src="/avatar.jpg"
+          alt="avatar"
+          width={100}
+          height={100}
+        />
+      </Link>
 
       <div className="flex items-center gap-4">
         {navItems.map((item, idx) => (

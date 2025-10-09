@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react"; // ✅ switched to framer-motion
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Github, Globe } from "lucide-react";
 
 export const Projects = () => {
