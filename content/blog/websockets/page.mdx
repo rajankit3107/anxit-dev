@@ -1,0 +1,44 @@
+---
+title: "Understanding WebSockets: The Backbone of Real-Time Communication"
+description: "A deep dive into WebSockets — how they work, why they matter, and how you can use them to build real-time applications."
+date: "2025-10-09"
+---
+
+# Understanding WebSockets: The Backbone of Real-Time Communication
+
+In today’s fast-paced digital world, users expect **instant feedback** — from chatting with friends to seeing live sports scores or stock prices update in real time. Traditional web technologies like HTTP struggle to meet these expectations efficiently. This is where **WebSockets** come in.
+
+WebSockets provide a way to establish a **persistent**, **full-duplex communication channel** between the client (such as a browser) and the server. This enables both sides to send data to each other instantly — without needing to constantly refresh or re-request information.
+
+---
+
+## 🧠 What Are WebSockets?
+
+WebSockets are a **communication protocol** built on top of TCP that allows **real-time, two-way interaction** between a client and a server.
+
+Unlike HTTP — which is **request-response-based** — WebSockets stay open once the connection is established. Both client and server can push messages to each other at any time.
+
+Let’s break that down:
+
+- **Full-duplex:** Both sides can send and receive data simultaneously.  
+- **Persistent:** One connection stays alive for as long as needed.  
+- **Low latency:** No repetitive handshakes or reconnections.  
+
+This makes WebSockets perfect for scenarios that demand **instant updates**, like chat systems, live dashboards, or collaborative tools.
+
+---
+
+## 🔁 Why Not Just Use HTTP?
+
+Before WebSockets, developers relied on creative but inefficient methods to simulate real-time communication:
+
+### 1. Polling
+
+The client repeatedly sends HTTP requests every few seconds to check for updates.
+
+```js
+setInterval(async () => {
+  const response = await fetch("/updates");
+  const data = await response.json();
+  console.log(data);
+}, 3000);

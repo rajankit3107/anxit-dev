@@ -49,7 +49,7 @@ export const Projects = () => {
         {projects.map((project, idx) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+            initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
               duration: 0.6,
