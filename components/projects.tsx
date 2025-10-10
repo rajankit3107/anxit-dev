@@ -17,7 +17,7 @@ export const Projects = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-secondary pt-4 pb-4 text-sm md:text-base"
+        className="text-secondary pb-4 text-sm md:text-sm"
       >
         I love building web applications and products that can impact millions
         of lives.
@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         {/* Content section */}
         <div className="flex flex-1 flex-col p-5">
           <div className="mb-2 flex items-center justify-between">
-            <h3 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-white">
+            <h3 className="text-lg font-semibold tracking-tight text-neutral-600 dark:text-neutral-400">
               {project.title}
             </h3>
             <ExternalLink
@@ -138,7 +138,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
             />
           </div>
 
-          <p className="mb-3 flex-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+          <p className="mb-3 flex-1 text-sm leading-relaxed tracking-tight text-neutral-600 dark:text-neutral-400">
             {project.description}
           </p>
 

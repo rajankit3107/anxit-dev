@@ -25,10 +25,10 @@ export const projects: Project[] = [
     github: "https://github.com/your-repo",
   },
   {
-    title: "Shopify Clone",
+    title: "Shopify",
     src: "/projects/shopify.png",
     description: "A Shopify-like storefront built with Next.js and Tailwind.",
-    tags: ["Next.js", "E-commerce", "Razorpay"],
+    tags: ["Node.js", "React", "E-commerce", "Razorpay"],
     demo: "https://your-demo-link.com",
     github: "https://github.com/your-repo",
   },
