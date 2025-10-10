@@ -6,6 +6,7 @@ import { Projects } from "@/components/projects";
 import { SubHeading } from "@/components/subheading";
 import { projects } from "@/constants/projects";
 import { motion } from "motion/react";
+import { Highlighter } from "@/components/ui/highlighter";
 
 export default function ProjectsPage() {
   const containerVariants = {
@@ -51,10 +52,23 @@ export default function ProjectsPage() {
 
           <motion.div variants={itemVariants} transition={transition}>
             <SubHeading>
-              I'm a passionate software engineer dedicated to crafting elegant
-              solutions for complex problems. With expertise in full-stack
-              development, I enjoy building user-centric applications that make
-              a difference.
+              I'm a passionate{" "}
+              <Highlighter action="underline" color="#FF9800">
+                software engineer
+              </Highlighter>{" "}
+              dedicated to crafting elegant solutions for{" "}
+              <Highlighter action="highlight" color="#87CEFA">
+                complex problems
+              </Highlighter>
+              . With expertise in{" "}
+              <Highlighter action="highlight" color="#FFD700">
+                full-stack development
+              </Highlighter>
+              , I enjoy building{" "}
+              <Highlighter action="underline" color="#FF9800">
+                user-centric applications
+              </Highlighter>{" "}
+              that make a difference.
             </SubHeading>
           </motion.div>
 

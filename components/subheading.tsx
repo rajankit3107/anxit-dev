@@ -22,7 +22,9 @@ export const SubHeading = ({
         delay: 0.2,
       }}
     >
-      <Tag className={cn("text-secondary pt-4 text-sm md:text-sm", classname)}>
+      <Tag
+        className={cn("pt-4 text-sm text-neutral-600 md:text-sm", classname)}
+      >
         {children}
       </Tag>
     </motion.div>

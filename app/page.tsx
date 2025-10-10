@@ -1,9 +1,11 @@
 import Career from "@/components/career-marquee";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
+import { SubHeadingHighlighted } from "@/components/highlighted-heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
+
 import { projects } from "@/constants/projects";
 import Image from "next/image";
 
@@ -15,11 +17,7 @@ export default function Home() {
           <div className="space-y-6">
             <Heading>Hi, I'm Ankit!</Heading>
             <SubHeading>
-              I'm a software developer with a passion of building scalable and
-              efficient solutions. I'm a passionate software engineer dedicated
-              to crafting elegant solutions for complex problems. With expertise
-              in full-stack development, I enjoy building user-centric
-              applications that make a difference.
+              <SubHeadingHighlighted />
             </SubHeading>
           </div>
 

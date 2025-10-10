@@ -4,6 +4,8 @@ import { DraggableCard } from "@/components/collage";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { SubHeading } from "@/components/subheading";
+import { SubHeadingTravelHighlighted } from "@/components/travel-highlight";
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
@@ -15,6 +17,35 @@ export default function AboutPage() {
   });
 
   const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      filter: "blur(4px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+    },
+  };
+
+  const transition = {
+    duration: 0.6,
+    ease: "easeOut" as const,
+  };
 
   const achievements = [
     {
@@ -59,27 +90,38 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen items-start justify-start">
       <Container classname="min-h-screen px-10 md:pt-20 md:pb-10">
-        <div className="max-w-lg">
-          <Heading>About Me</Heading>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-lg"
+        >
+          <motion.div variants={itemVariants} transition={transition}>
+            <Heading>About Me</Heading>
+          </motion.div>
 
-          <SubHeading>
-            I'm a passionate software engineer dedicated to crafting elegant
-            solutions for complex problems. With expertise in full-stack
-            development, I enjoy building user-centric applications that make a
-            difference.
-          </SubHeading>
+          <motion.div variants={itemVariants} transition={transition}>
+            <SubHeading>
+              I'm a passionate software engineer dedicated to crafting elegant
+              solutions for complex problems. With expertise in full-stack
+              development, I enjoy building user-centric applications that make
+              a difference.
+            </SubHeading>
+          </motion.div>
 
-          <SubHeading>
-            I love to travel and explore new places. I'm a big fan of nature and
-            adventure. I'm also a big fan of technology and innovation.
-          </SubHeading>
-          {/* <DraggableCard /> */}
-          <DraggableCard />
+          <motion.div variants={itemVariants} transition={transition}>
+            <SubHeadingTravelHighlighted />
+          </motion.div>
+
+          <motion.div variants={itemVariants} transition={transition}>
+            <DraggableCard />
+          </motion.div>
+
           <div className="pt-8">
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="mb-8 text-lg font-bold text-neutral-900 dark:text-neutral-100"
             >
               Timeline
@@ -109,8 +151,8 @@ export default function AboutPage() {
                 {achievements.map((item, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -20, filter: "blur(4px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ x: 4 }}
@@ -142,7 +184,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </div>
   );
