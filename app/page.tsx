@@ -5,6 +5,7 @@ import { SubHeadingHighlighted } from "@/components/highlighted-heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
+
 import { projects } from "@/constants/projects";
 
 export default function Home() {
@@ -18,7 +19,6 @@ export default function Home() {
               <SubHeadingHighlighted />
             </SubHeading>
           </div>
-
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               Featured Work
@@ -28,7 +28,6 @@ export default function Home() {
               <Projects projects={projects.slice(0, 3)} />
             </div>
           </div>
-
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               Latest Articles
@@ -38,7 +37,6 @@ export default function Home() {
               <RecentBlogs />
             </div>
           </div>
-
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               My Journey
