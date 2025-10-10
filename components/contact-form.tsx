@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export const ContactForm = () => {
@@ -19,7 +19,7 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("handle submit clicked");
+    // console.log("handle submit clicked");
 
     const { name, email, message } = formData;
 

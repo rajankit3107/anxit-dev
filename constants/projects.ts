@@ -42,7 +42,7 @@ export const projects: Project[] = [
   {
     title: "Next-Pay",
     src: "/projects/paytm.png",
-    description: "A music streaming app with playlist and search features.",
+    description: "A paytm like application to transfer and receive money.",
     tags: ["React", "Node.js", "Postgresql"],
     demo: "https://paytm-client-lime.vercel.app",
     github: "https://github.com/rajankit3107/next-pay",
