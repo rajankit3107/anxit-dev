@@ -57,8 +57,8 @@ export default function AboutPage() {
   ];
 
   return (
-    <Container classname="flex min-h-screen items-start justify-start">
-      <div className="min-h-[200vh] px-10 md:pt-20 md:pb-10">
+    <div className="flex min-h-screen items-start justify-start">
+      <Container classname="min-h-[200vh] px-10 md:pt-20 md:pb-10">
         <div className="max-w-lg">
           <Heading>About Me</Heading>
 
@@ -72,10 +72,9 @@ export default function AboutPage() {
           <SubHeading classname="text-xs">
             I love to travel and explore new places. I'm a big fan of nature and
             adventure. I'm also a big fan of technology and innovation.
-            Currently pursuing Computer Science at Bennett University with a
-            CGPA of 8.6/10.
           </SubHeading>
           {/* <DraggableCard /> */}
+          <DraggableCard />
           <div className="pt-8">
             <motion.h2
               initial={{ opacity: 0 }}
@@ -144,7 +143,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
