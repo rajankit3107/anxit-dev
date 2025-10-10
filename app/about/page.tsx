@@ -58,7 +58,7 @@ export default function AboutPage() {
 
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-[200vh] px-10 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen px-10 md:pt-20 md:pb-10">
         <div className="max-w-lg">
           <Heading>About Me</Heading>
 

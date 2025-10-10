@@ -53,7 +53,7 @@ export function DraggableCard() {
   return (
     <DraggableCardContainer className="relative ml-20 flex min-h-[30rem] w-full items-center justify-center overflow-clip rounded-md">
       {items.map((item) => (
-        <DraggableCardBody className={item.className}>
+        <DraggableCardBody key={item.title} className={item.className}>
           <img
             src={item.image}
             alt={item.title}

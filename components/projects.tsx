@@ -4,43 +4,13 @@ import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Link } from "next-view-transitions";
 import { Github, Globe, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Project, projects as defaultProjects } from "@/constants/projects";
 
-export const Projects = () => {
-  const projects = [
-    {
-      title: "Sweetly",
-      src: "/projects/sweetly.png",
-      description: "A modern sweet shop e-commerce platform with a clean UI.",
-      tags: ["Node.js", "TypeScript", "Tailwind", "React"],
-      demo: "https://your-demo-link.com",
-      github: "https://github.com/your-repo",
-    },
-    {
-      title: "Suraksha AI",
-      src: "/projects/suraksha_ai.png",
-      description: "An AI-powered security and monitoring web application.",
-      tags: ["Python", "AI/ML", "Flask"],
-      demo: "https://your-demo-link.com",
-      github: "https://github.com/your-repo",
-    },
-    {
-      title: "Shopify Clone",
-      src: "/projects/shopify.png",
-      description: "A Shopify-like storefront built with Next.js and Tailwind.",
-      tags: ["Next.js", "E-commerce", "Razorpay"],
-      demo: "https://your-demo-link.com",
-      github: "https://github.com/your-repo",
-    },
-    {
-      title: "Muzer",
-      src: "/projects/muzer.png",
-      description: "A music streaming app with playlist and search features.",
-      tags: ["React", "Node.js", "Postgresql"],
-      demo: "https://your-demo-link.com",
-      github: "https://github.com/your-repo",
-    },
-  ];
-
+export const Projects = ({
+  projects = defaultProjects,
+}: {
+  projects?: Project[];
+}) => {
   return (
     <div className="py-16">
       <motion.p
@@ -53,7 +23,7 @@ export const Projects = () => {
         of lives.
       </motion.p>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {projects.map((project, idx) => (
           <ProjectCard key={project.title} project={project} index={idx} />
         ))}
@@ -109,14 +79,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative"
+      className="group relative flex h-full"
     >
       {/* Gradient border effect */}
       <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200 opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-neutral-800 dark:via-neutral-700 dark:to-neutral-800" />
 
-      <div className="relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-neutral-200/50 transition-shadow duration-500 group-hover:shadow-2xl group-hover:shadow-neutral-300/50 dark:bg-neutral-900 dark:shadow-neutral-950/50 dark:group-hover:shadow-neutral-950/80">
+      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-white shadow-lg shadow-neutral-200/50 transition-shadow duration-500 group-hover:shadow-2xl group-hover:shadow-neutral-300/50 dark:bg-neutral-900 dark:shadow-neutral-950/50 dark:group-hover:shadow-neutral-950/80">
         {/* Image container with advanced hover effects */}
-        <div className="relative aspect-[16/10] w-full overflow-hidden">
+        <div className="relative aspect-[16/9] w-full flex-shrink-0 overflow-hidden">
           <Image
             src={project.src}
             alt={project.title}
@@ -157,9 +127,9 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
         </div>
 
         {/* Content section */}
-        <div className="flex flex-col p-6">
-          <div className="mb-3 flex items-center justify-between">
-            <h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+        <div className="flex flex-1 flex-col p-5">
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-white">
               {project.title}
             </h3>
             <ExternalLink
@@ -168,7 +138,7 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
             />
           </div>
 
-          <p className="mb-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+          <p className="mb-3 flex-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
             {project.description}
           </p>
 

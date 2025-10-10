@@ -38,7 +38,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-[200vh] px-10 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen px-10 md:pt-20 md:pb-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -3,12 +3,13 @@ import { Heading } from "@/components/heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
+import { projects } from "@/constants/projects";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-[200vh] p-4 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen p-4 md:pt-20 md:pb-10">
         <Heading>Hi, I'm Ankit!</Heading>
         <SubHeading>
           I'm a software developer with a passion of building scalable and
@@ -17,7 +18,7 @@ export default function Home() {
           full-stack development, I enjoy building user-centric applications
           that make a difference.
         </SubHeading>
-        <Projects />
+        <Projects projects={projects.slice(0, 3)} />
         <RecentBlogs />
       </Container>
     </div>
