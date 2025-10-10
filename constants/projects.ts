@@ -3,7 +3,7 @@ export type Project = {
   src: string;
   description: string;
   tags: string[];
-  demo: string;
+  demo?: string;
   github: string;
 };
 
@@ -22,14 +22,13 @@ export const projects: Project[] = [
     description: "An AI-powered security and monitoring web application.",
     tags: ["Python", "AI/ML", "Flask"],
     demo: "https://shopify-peach-seven.vercel.app",
-    github: "https://github.com/rajankit3107/shopify",
+    github: "https://github.com/rajankit3107/suraksha-ai",
   },
   {
     title: "Shopify",
     src: "/projects/shopify.png",
     description: "A Shopify-like storefront built with Next.js and Tailwind.",
     tags: ["Node.js", "React", "E-commerce", "Razorpay"],
-    demo: "https://shopify-peach-seven.vercel.app",
     github: "https://github.com/rajankit3107/shopify",
   },
   {
@@ -37,7 +36,15 @@ export const projects: Project[] = [
     src: "/projects/muzer.png",
     description: "A music streaming app with playlist and search features.",
     tags: ["React", "Node.js", "Postgresql"],
-    demo: "https://your-demo-link.com",
-    github: "https://github.com/your-repo",
+    demo: "https://muzer-qe2v.vercel.app/",
+    github: "https://github.com/rajankit3107/muzer",
+  },
+  {
+    title: "Next-Pay",
+    src: "/projects/paytm.png",
+    description: "A music streaming app with playlist and search features.",
+    tags: ["React", "Node.js", "Postgresql"],
+    demo: "https://paytm-client-lime.vercel.app",
+    github: "https://github.com/rajankit3107/next-pay",
   },
 ];

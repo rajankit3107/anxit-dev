@@ -3,7 +3,6 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
-
 import Image from "next/image";
 
 export function DraggableCard() {
@@ -53,11 +52,9 @@ export function DraggableCard() {
     <DraggableCardContainer className="relative ml-20 flex min-h-[30rem] w-full items-center justify-center overflow-clip rounded-md">
       {items.map((item) => (
         <DraggableCardBody key={item.title} className={item.className}>
-          <Image
+          <img
             src={item.image}
             alt={item.title}
-            height={50}
-            width={80}
             className="pointer-events-none relative z-10 h-50 w-80 object-cover"
           />
           <h3 className="mt-4 text-center text-base font-bold text-neutral-700 dark:text-neutral-300">
