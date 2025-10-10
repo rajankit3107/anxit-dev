@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Link } from "next-view-transitions";
 import { Github, Globe, ExternalLink, ArrowUpRight } from "lucide-react";
@@ -32,7 +32,13 @@ export const Projects = ({
   );
 };
 
-const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) => {
   const [isInView, setIsInView] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);

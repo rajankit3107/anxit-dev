@@ -1,6 +1,5 @@
 import getBlogPosts from "@/lib/getBlogs";
 import { Link } from "next-view-transitions";
-import { Highlighter } from "./ui/highlighter";
 
 const formatDate = (dateString: Date) => {
   const date = new Date(dateString);

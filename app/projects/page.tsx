@@ -52,7 +52,7 @@ export default function ProjectsPage() {
 
           <motion.div variants={itemVariants} transition={transition}>
             <SubHeading>
-              I'm a passionate{" "}
+              I&apos;m a passionate{" "}
               <Highlighter action="underline" color="#FF9800">
                 software engineer
               </Highlighter>{" "}

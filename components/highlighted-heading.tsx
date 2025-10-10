@@ -3,11 +3,11 @@ import { Highlighter } from "./ui/highlighter";
 export function SubHeadingHighlighted() {
   return (
     <p className="pt-4 text-sm text-neutral-600 md:text-sm">
-      I'm a software developer with a passion of building{" "}
+      I&apos;m a software developer with a passion of building{" "}
       <Highlighter action="highlight" color="#ffd1dc">
         scalable and efficient solutions
       </Highlighter>
-      . I'm a passionate software engineer dedicated to crafting{" "}
+      . I&apos;m a passionate software engineer dedicated to crafting{" "}
       <Highlighter action="highlight" color="#87CEFA">
         elegant solutions
       </Highlighter>{" "}

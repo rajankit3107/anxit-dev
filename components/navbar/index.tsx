@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Container } from "../container";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { motion, useMotionValueEvent, useScroll } from "motion/react"; // ✅ fix import

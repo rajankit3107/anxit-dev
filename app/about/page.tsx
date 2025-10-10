@@ -5,7 +5,6 @@ import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { SubHeading } from "@/components/subheading";
 import { SubHeadingTravelHighlighted } from "@/components/travel-highlight";
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
@@ -102,7 +101,7 @@ export default function AboutPage() {
 
           <motion.div variants={itemVariants} transition={transition}>
             <SubHeading>
-              I'm a passionate software engineer dedicated to crafting elegant
+              I am a passionate software engineer dedicated to crafting elegant
               solutions for complex problems. With expertise in full-stack
               development, I enjoy building user-centric applications that make
               a difference.

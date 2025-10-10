@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -18,7 +17,7 @@ export default function Career() {
       <div className="flex">
         <Marquee speed={50} pauseOnHover className="py-2">
           {data.map((item, idx) => (
-            <CareerCard index={idx} key={idx} {...item} />
+            <CareerCard key={idx} {...item} />
           ))}
         </Marquee>
       </div>
@@ -26,7 +25,7 @@ export default function Career() {
   );
 }
 
-const CareerCard = ({ src, index }: { src: string; index: number }) => {
+const CareerCard = ({ src }: { src: string }) => {
   return (
     <div className="shadow-custom mx-2 flex h-40 w-auto max-w-[250px] flex-col justify-center overflow-hidden rounded-md transition duration-300 hover:shadow-xl">
       <Image

@@ -5,9 +5,7 @@ import { SubHeadingHighlighted } from "@/components/highlighted-heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
-
 import { projects } from "@/constants/projects";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -15,7 +13,7 @@ export default function Home() {
       <Container classname="min-h-screen p-4 md:pt-20 md:pb-10">
         <div className="space-y-20">
           <div className="space-y-6">
-            <Heading>Hi, I'm Ankit!</Heading>
+            <Heading>Hi, I am Ankit!</Heading>
             <SubHeading>
               <SubHeadingHighlighted />
             </SubHeading>
