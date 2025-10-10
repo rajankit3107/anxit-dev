@@ -1,3 +1,4 @@
+import Career from "@/components/career-marquee";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Projects } from "@/components/projects";
@@ -8,18 +9,50 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-start justify-start">
+    <div className="flex min-h-screen items-start justify-start bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <Container classname="min-h-screen p-4 md:pt-20 md:pb-10">
-        <Heading>Hi, I'm Ankit!</Heading>
-        <SubHeading>
-          I'm a software developer with a passion of building scalable and
-          efficient solutions.I'm a passionate software engineer dedicated to
-          crafting elegant solutions for complex problems. With expertise in
-          full-stack development, I enjoy building user-centric applications
-          that make a difference.
-        </SubHeading>
-        <Projects projects={projects.slice(0, 3)} />
-        <RecentBlogs />
+        <div className="space-y-20">
+          <div className="space-y-6">
+            <Heading>Hi, I'm Ankit!</Heading>
+            <SubHeading>
+              I'm a software developer with a passion of building scalable and
+              efficient solutions. I'm a passionate software engineer dedicated
+              to crafting elegant solutions for complex problems. With expertise
+              in full-stack development, I enjoy building user-centric
+              applications that make a difference.
+            </SubHeading>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
+              Featured Work
+            </h3>
+            <div className="h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+            <div className="pt-4">
+              <Projects projects={projects.slice(0, 3)} />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
+              Latest Articles
+            </h3>
+            <div className="h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+            <div className="pt-4">
+              <RecentBlogs />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
+              My Journey
+            </h3>
+            <div className="h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+            <div className="pt-4">
+              <Career />
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   );

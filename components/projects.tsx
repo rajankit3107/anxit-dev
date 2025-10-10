@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Link } from "next-view-transitions";
 import { Github, Globe, ExternalLink, ArrowUpRight } from "lucide-react";
@@ -33,6 +33,7 @@ export const Projects = ({
 };
 
 const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+  const [isInView, setIsInView] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -64,9 +65,24 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-50px" }}
+      ref={(el) => {
+        if (el) {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              setIsInView(entry.isIntersecting);
+            },
+            { rootMargin: "-50px" },
+          );
+          observer.observe(el);
+          return () => observer.disconnect();
+        }
+      }}
+      initial={{ opacity: 0, filter: "blur(10px)" }}
+      animate={
+        isInView
+          ? { opacity: 1, filter: "blur(0px)" }
+          : { opacity: 0, filter: "blur(10px)" }
+      }
       transition={{
         duration: 0.7,
         delay: index * 0.1,

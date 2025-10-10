@@ -31,7 +31,7 @@ export default function RecentBlogs() {
       </div>
 
       <div className="space-y-0">
-        {recentPosts.map((post) => (
+        {recentPosts.slice(0, 3).map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
