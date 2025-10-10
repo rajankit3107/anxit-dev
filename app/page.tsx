@@ -5,20 +5,20 @@ import { SubHeadingHighlighted } from "@/components/highlighted-heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
 import { SubHeading } from "@/components/subheading";
-
 import { projects } from "@/constants/projects";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-start justify-start bg-gradient-to-b from-slate-50 via-white to-slate-50">
-      <Container classname="min-h-screen p-4 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen px-4 pt-32 md:pt-36 lg:pt-32 pb-10">
         <div className="space-y-20">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <Heading>Hi, I am Ankit!</Heading>
             <SubHeading>
               <SubHeadingHighlighted />
             </SubHeading>
           </div>
+
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               Featured Work
@@ -28,6 +28,7 @@ export default function Home() {
               <Projects projects={projects.slice(0, 3)} />
             </div>
           </div>
+
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               Latest Articles
@@ -37,6 +38,7 @@ export default function Home() {
               <RecentBlogs />
             </div>
           </div>
+
           <div className="space-y-2">
             <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
               My Journey
