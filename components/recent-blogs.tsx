@@ -1,5 +1,6 @@
 import getBlogPosts from "@/lib/getBlogs";
 import { Link } from "next-view-transitions";
+import { Highlighter } from "./ui/highlighter";
 
 const formatDate = (dateString: Date) => {
   const date = new Date(dateString);
@@ -17,7 +18,13 @@ export default function RecentBlogs() {
   return (
     <div className="mt-12">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Recent Articles</h2>
+        <h2 className="text-xl font-bold text-gray-900">Recent Articles</h2>
+        {/* <Highlighter action="underline" color="#FF9800">
+          Latest thoughts on
+        </Highlighter>{" "}
+        <Highlighter action="highlight" color="#87CEFA">
+          software development and engineering
+        </Highlighter>{" "} */}
         <p className="mt-1.5 text-sm text-gray-500">
           Latest thoughts on software development and engineering
         </p>
@@ -37,14 +44,14 @@ export default function RecentBlogs() {
               </div>
               <div className="flex-1 pb-10">
                 <div className="mb-2 flex items-center justify-between gap-4">
-                  <h2 className="text-xl leading-snug font-bold text-gray-900 transition-colors group-hover:text-gray-600">
+                  <h2 className="text-lg leading-snug font-bold text-neutral-700 transition-colors group-hover:text-neutral-500">
                     {post.title}
                   </h2>
                   <time className="flex-shrink-0 text-xs whitespace-nowrap text-gray-400">
                     {formatDate(post.date)}
                   </time>
                 </div>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="text-xs leading-relaxed text-gray-600">
                   {post.description}
                 </p>
               </div>

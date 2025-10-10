@@ -91,11 +91,11 @@ export default function BlogPageClient({ posts }: { posts: Post[] }) {
                   <div className="w-px flex-1 bg-gray-200"></div>
                 </div>
                 <div className="flex-1 pb-10">
-                  <div className="mb-2 flex items-baseline gap-4">
-                    <h2 className="text-2xl leading-snug font-bold text-gray-900 transition-colors group-hover:text-gray-600">
+                  <div className="mb-2 flex items-center justify-between gap-4">
+                    <h2 className="text-lg leading-snug font-bold text-gray-900 transition-colors group-hover:text-gray-600">
                       {post.title}
                     </h2>
-                    <time className="flex-shrink-0 text-sm whitespace-nowrap text-gray-400">
+                    <time className="mt-[2px] flex-shrink-0 text-xs text-gray-400">
                       {formatDate(post.date)}
                     </time>
                   </div>

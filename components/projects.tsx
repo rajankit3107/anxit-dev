@@ -47,11 +47,10 @@ export const Projects = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mb-12 max-w-2xl text-base leading-relaxed text-neutral-600 md:text-lg dark:text-neutral-400"
+        className="text-secondary pt-4 pb-4 text-sm md:text-base"
       >
         I love building web applications and products that can impact millions
-        of lives. Each project represents a unique challenge and learning
-        experience.
+        of lives.
       </motion.p>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">

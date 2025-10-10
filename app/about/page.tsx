@@ -1,5 +1,6 @@
 "use client";
 
+import { DraggableCard } from "@/components/collage";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { SubHeading } from "@/components/subheading";
@@ -61,20 +62,20 @@ export default function AboutPage() {
         <div className="max-w-lg">
           <Heading>About Me</Heading>
 
-          <SubHeading>
+          <SubHeading classname="text-xs">
             I'm a passionate software engineer dedicated to crafting elegant
             solutions for complex problems. With expertise in full-stack
             development, I enjoy building user-centric applications that make a
             difference.
           </SubHeading>
 
-          <SubHeading>
+          <SubHeading classname="text-xs">
             I love to travel and explore new places. I'm a big fan of nature and
             adventure. I'm also a big fan of technology and innovation.
             Currently pursuing Computer Science at Bennett University with a
             CGPA of 8.6/10.
           </SubHeading>
-
+          {/* <DraggableCard /> */}
           <div className="pt-8">
             <motion.h2
               initial={{ opacity: 0 }}

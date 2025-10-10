@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 export const SubHeading = ({
   as: Tag = "h2",
@@ -10,8 +13,20 @@ export const SubHeading = ({
   classname?: string;
 }) => {
   return (
-    <Tag className={cn("text-secondary pt-4 text-sm md:text-base", classname)}>
-      {children}
-    </Tag>
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+      whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+        delay: 0.2,
+      }}
+    >
+      <Tag
+        className={cn("text-secondary pt-4 text-sm md:text-base", classname)}
+      >
+        {children}
+      </Tag>
+    </motion.div>
   );
 };
