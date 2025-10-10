@@ -1,3 +1,4 @@
+// ============ ABOUT PAGE ============
 "use client";
 
 import { DraggableCard } from "@/components/collage";
@@ -71,7 +72,6 @@ export default function AboutPage() {
       description:
         "Engineered responsive UIs with React, improving engagement by 35%. Implemented CI/CD pipeline reducing deployment time by 60%.",
     },
-
     {
       year: "2021",
       title: "CBSE Senior Secondary (12th Grade)",
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-screen px-10 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen px-4 pt-32 md:pt-36 lg:pt-32 pb-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -127,10 +127,8 @@ export default function AboutPage() {
             </motion.h2>
 
             <div className="relative pl-8" ref={timelineRef}>
-              {/* Vertical line */}
               <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-neutral-300 via-neutral-200 to-transparent dark:from-neutral-600 dark:via-neutral-700" />
 
-              {/* Animated dot that moves down as you scroll */}
               <motion.div
                 style={{ top: dotY }}
                 className="absolute left-0 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-neutral-500 shadow-lg dark:bg-blue-400"
@@ -145,7 +143,6 @@ export default function AboutPage() {
                 />
               </motion.div>
 
-              {/* Timeline items */}
               <div className="space-y-12">
                 {achievements.map((item, index) => (
                   <motion.div
@@ -157,7 +154,6 @@ export default function AboutPage() {
                     whileHover={{ x: 4 }}
                     className="relative"
                   >
-                    {/* Timeline dot */}
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -166,7 +162,6 @@ export default function AboutPage() {
                       className="absolute top-1 -left-4 h-2 w-2 rounded-full border border-neutral-400 bg-neutral-500 dark:border-neutral-500 dark:bg-neutral-400"
                     />
 
-                    {/* Content */}
                     <div>
                       <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
                         {item.year}

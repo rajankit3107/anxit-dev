@@ -1,5 +1,4 @@
 "use client";
-
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Projects } from "@/components/projects";
@@ -40,7 +39,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container classname="min-h-screen px-10 md:pt-20 md:pb-10">
+      <Container classname="min-h-screen px-4 pt-32 md:pt-36 lg:pt-32 pb-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -49,7 +48,6 @@ export default function ProjectsPage() {
           <motion.div variants={itemVariants} transition={transition}>
             <Heading>Projects</Heading>
           </motion.div>
-
           <motion.div variants={itemVariants} transition={transition}>
             <SubHeading>
               I&apos;m a passionate{" "}
@@ -71,7 +69,6 @@ export default function ProjectsPage() {
               that make a difference.
             </SubHeading>
           </motion.div>
-
           <motion.div
             variants={itemVariants}
             transition={transition}
