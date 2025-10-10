@@ -1,10 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { send } from "@/lib/email";
+import { useState } from "react";
 import { toast } from "sonner";
+import { z } from "zod";
+
+export const formSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.email(),
+  message: z.string().min(1, "Message is required"),
+});
 
 export const ContactForm = () => {
-  // ✅ useState must be at the top level
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,25 +26,24 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log("handle submit clicked");
 
-    const { name, email, message } = formData;
-
-    if (!name || !email || !message) {
-      toast.error("Please fill all the fields");
+    const parsed = formSchema.safeParse(formData);
+    if (!parsed.success) {
+      toast.error("Please fill all fields correctly");
       return;
     }
 
-    const response = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Api call successful");
-      }, 1000);
-    });
+    toast.loading("Sending message...");
+    const res = await send(formData);
 
-    if (response) {
-      toast.success("Form submitted successfully");
+    if (res?.success) {
+      // ✅ match server action return
+      toast.dismiss();
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } else {
-      toast.error("Something went wrong");
+      toast.dismiss();
+      toast.error("Failed to send message. Try again later.");
     }
   };
 
@@ -53,9 +59,10 @@ export const ContactForm = () => {
         <input
           id="name"
           name="name"
-          placeholder="name"
+          placeholder="John Doe"
+          value={formData.name}
           onChange={handleChange}
-          className="shadow-custom focus:ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-custom focus:ring-primary rounded-md p-4 text-sm focus:ring-2 focus:outline-none"
         />
       </div>
 
@@ -69,9 +76,10 @@ export const ContactForm = () => {
         <input
           id="email"
           name="email"
-          placeholder="email"
+          placeholder="john@example.com"
+          value={formData.email}
           onChange={handleChange}
-          className="shadow-custom rounded-md px-2 py-1 text-sm"
+          className="shadow-custom rounded-md p-4 text-sm"
         />
       </div>
 
@@ -85,10 +93,11 @@ export const ContactForm = () => {
         <textarea
           rows={5}
           id="message"
-          placeholder="you are awesome , tell me about yourself!"
           name="message"
+          placeholder="You are awesome, tell me about yourself!"
+          value={formData.message}
           onChange={handleChange}
-          className="shadow-custom focus:ring-primary resize-none rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+          className="shadow-custom focus:ring-primary resize-none rounded-md p-2 text-sm focus:ring-2 focus:outline-none"
         />
       </div>
 

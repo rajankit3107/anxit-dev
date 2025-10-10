@@ -3,7 +3,6 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
-import Image from "next/image";
 
 export function DraggableCard() {
   const items = [
