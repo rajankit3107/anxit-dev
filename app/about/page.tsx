@@ -62,14 +62,14 @@ export default function AboutPage() {
         <div className="max-w-lg">
           <Heading>About Me</Heading>
 
-          <SubHeading classname="text-xs">
+          <SubHeading>
             I'm a passionate software engineer dedicated to crafting elegant
             solutions for complex problems. With expertise in full-stack
             development, I enjoy building user-centric applications that make a
             difference.
           </SubHeading>
 
-          <SubHeading classname="text-xs">
+          <SubHeading>
             I love to travel and explore new places. I'm a big fan of nature and
             adventure. I'm also a big fan of technology and innovation.
           </SubHeading>

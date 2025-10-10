@@ -4,6 +4,7 @@ import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Projects } from "@/components/projects";
 import { SubHeading } from "@/components/subheading";
+import { projects } from "@/constants/projects";
 import { motion } from "motion/react";
 
 export default function ProjectsPage() {
@@ -64,7 +65,7 @@ export default function ProjectsPage() {
             whileInView="visible"
             initial="hidden"
           >
-            <Projects />
+            <Projects projects={projects} />
           </motion.div>
         </motion.div>
       </Container>

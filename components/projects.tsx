@@ -17,7 +17,7 @@ export const Projects = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-secondary pb-4 text-sm md:text-sm"
+        className="text-secondary -mt-6 pb-4 text-sm md:text-sm"
       >
         I love building web applications and products that can impact millions
         of lives.
