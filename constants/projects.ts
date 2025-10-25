@@ -21,7 +21,7 @@ export const projects: Project[] = [
     src: "/projects/suraksha_ai.png",
     description: "An AI-powered security and monitoring web application.",
     tags: ["Python", "AI/ML", "Flask"],
-    demo: "https://shopify-peach-seven.vercel.app",
+    demo: "https://suraksha-ai-ankit.vercel.app",
     github: "https://github.com/rajankit3107/suraksha-ai",
   },
   {

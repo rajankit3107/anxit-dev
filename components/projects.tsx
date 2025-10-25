@@ -133,7 +133,7 @@ const ProjectCard = ({
               <Github size={20} className="text-white" />
             </Link>
             <Link
-              href={"#"}
+              href={project.demo || "#"}
               target="_blank"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white/20"
             >

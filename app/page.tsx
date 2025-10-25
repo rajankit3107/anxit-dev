@@ -4,6 +4,7 @@ import { Heading } from "@/components/heading";
 import { SubHeadingHighlighted } from "@/components/highlighted-heading";
 import { Projects } from "@/components/projects";
 import RecentBlogs from "@/components/recent-blogs";
+import { Skills } from "@/components/skills";
 import { SubHeading } from "@/components/subheading";
 import { projects } from "@/constants/projects";
 
@@ -17,6 +18,16 @@ export default function Home() {
             <SubHeading>
               <SubHeadingHighlighted />
             </SubHeading>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold tracking-widest text-slate-400 uppercase">
+              Skills & Technologies
+            </h3>
+            <div className="h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+            <div className="pt-4">
+              <Skills />
+            </div>
           </div>
 
           <div className="space-y-2">
