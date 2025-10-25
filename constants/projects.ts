@@ -29,6 +29,7 @@ export const projects: Project[] = [
     src: "/projects/shopify.png",
     description: "A Shopify-like storefront built with Next.js and Tailwind.",
     tags: ["Node.js", "React", "E-commerce", "Razorpay"],
+    demo: "https://shopify-peach-seven.vercel.app",
     github: "https://github.com/rajankit3107/shopify",
   },
   {
